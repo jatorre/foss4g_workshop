@@ -1,0 +1,14 @@
+1) A little tour about what is CartoDB and where you can find resources
+
+2) Demo using the harvards election data
+
+polygon-gamma:0.5;
+
+
+3) Create a polygon an intersect the data
+
+  SELECT * FROM ny_final_1 WHERE the_geom && (select the_geom FROM ny_final_1 WHERE cartodb_id= 14927)
+  opposite
+  SELECT * FROM ny_final_1 WHERE ST_Disjoint(the_geom ,(select the_geom FROM ny_final_1 WHERE cartodb_id= 14927))
+
+4) 
